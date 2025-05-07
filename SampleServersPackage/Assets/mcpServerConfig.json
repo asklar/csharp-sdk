@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "mcpServers": [
+    {
+      "name": "QuickstartWeatherServer",
+      "type": "stdio",
+      "command": "QuickstartWeatherServer.exe"
+    },
+    {
+      "name": "EverythingServer",
+      "type": "stdio",
+      "command": "EverythingServer.exe"
+    },
+    {
+      "name": "ChatWithTools",
+      "type": "stdio",
+      "command": "ChatWithTools.exe"
+    },
+    {
+      "name": "AspNetCoreServer",
+      "type": "sse",
+      "uri": "http://localhost:5000/sse",
+      "headers": []
+    }
+  ]
+}

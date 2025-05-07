@@ -12,6 +12,7 @@ builder.Configuration
     .AddUserSecrets<Program>();
 
 var (command, arguments) = GetCommandAndArguments(args);
+command = Path.GetFullPath(command);
 
 var clientTransport = new StdioClientTransport(new()
 {
@@ -71,6 +72,11 @@ static void PromptForInput()
     Console.ResetColor();
 }
 
+static string GetPackageRoot()
+{
+    return Path.GetDirectoryName(AppContext.BaseDirectory) ?? AppContext.BaseDirectory;
+}
+
 /// <summary>
 /// Determines the command (executable) to run and the script/path to pass to it. This allows different
 /// languages/runtime environments to be used as the MCP server.
@@ -90,6 +96,6 @@ static (string command, string[] arguments) GetCommandAndArguments(string[] args
         [var script] when script.EndsWith(".py") => ("python", args),
         [var script] when script.EndsWith(".js") => ("node", args),
         [var script] when Directory.Exists(script) || (File.Exists(script) && script.EndsWith(".csproj")) => ("dotnet", ["run", "--project", script, "--no-build"]),
-        _ => ("dotnet", ["run", "--project", "../../../../QuickstartWeatherServer", "--no-build"])
+        _ => (@$"{GetPackageRoot()}\..\QuickStartWeatherServer\QuickStartWeatherServer.exe", [])
     };
 }

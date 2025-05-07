@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="rescap uap uap3 uap5">
+
+  <Identity
+    Name="CSharpSdkSampleServersPackage"
+    Publisher="CN=asklar"
+    Version="1.0.0.0" />
+
+  <Properties>
+    <DisplayName>CSharpSdkSampleServersPackage</DisplayName>
+    <PublisherDisplayName>asklar</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+
+    <Application Id="QuickstartClient"
+             Executable="QuickstartClient\QuickstartClient.exe"
+             EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="QuickstartClient"
+        Description="QuickstartClient"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+
+    <Application Id="EverythingServer"
+                   Executable="EverythingServer\EverythingServer.exe"
+                   EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="EverythingServer"
+        Description="EverythingServer"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap5:Extension Category="windows.appExecutionAlias">
+          <uap5:AppExecutionAlias>
+            <uap5:ExecutionAlias Alias="EverythingServer.exe"/>
+          </uap5:AppExecutionAlias>
+        </uap5:Extension>
+      </Extensions>
+    </Application>
+
+    <Application Id="ChatWithTools"
+               Executable="ChatWithTools\ChatWithTools.exe"
+               EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="ChatWithTools"
+        Description="ChatWithTools"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap5:Extension Category="windows.appExecutionAlias">
+          <uap5:AppExecutionAlias>
+            <uap5:ExecutionAlias Alias="ChatWithTools.exe"/>
+          </uap5:AppExecutionAlias>
+        </uap5:Extension>
+      </Extensions>
+    </Application>
+
+    <!--<Application Id="TestServerWithHosting"
+           Executable="TestServerWithHosting\TestServerWithHosting.exe"
+           EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="TestServerWithHosting"
+        Description="TestServerWithHosting"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap5:Extension Category="windows.appExecutionAlias">
+          <uap5:AppExecutionAlias>
+            <uap5:ExecutionAlias Alias="TestServerWithHosting.exe"/>
+          </uap5:AppExecutionAlias>
+        </uap5:Extension>
+      </Extensions>
+    </Application>-->
+
+    <Application Id="AspNetCoreSseServer"
+       Executable="AspNetCoreSseServer\AspNetCoreSseServer.exe"
+       EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="AspNetCoreSseServer"
+        Description="AspNetCoreSseServer"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap5:Extension Category="windows.appExecutionAlias">
+          <uap5:AppExecutionAlias>
+            <uap5:ExecutionAlias Alias="AspNetCoreSseServer.exe"/>
+          </uap5:AppExecutionAlias>
+        </uap5:Extension>
+      </Extensions>
+    </Application>
+
+    <Application Id="QuickstartWeatherServer"
+                 Executable="QuickstartWeatherServer\QuickstartWeatherServer.exe"
+                  EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="QuickstartWeatherServer"
+        Description="QuickstartWeatherServer"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+      
+      <Extensions>
+        <uap3:Extension Category="windows.appExtension">
+          <uap3:AppExtension
+              Name="com.microsoft.windows.ai.modelcontextprotocolserver"
+              Id="CSharpSdkSamplePackagedServers"
+              DisplayName="CSharpSdkSamplePackagedServers"
+              PublicFolder="Assets">
+            <uap3:Properties>
+              <Registration>mcpServerConfig.json</Registration>
+            </uap3:Properties>
+          </uap3:AppExtension>
+        </uap3:Extension>
+
+        <uap5:Extension Category="windows.appExecutionAlias">
+          <uap5:AppExecutionAlias>
+            <uap5:ExecutionAlias Alias="QuickstartWeatherServer.exe"/>
+          </uap5:AppExecutionAlias>
+        </uap5:Extension>
+      </Extensions>
+    </Application>
+
+  </Applications>
+
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
