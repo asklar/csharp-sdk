@@ -81,3 +81,7 @@ docs/api
 # Rider
 .idea/
 .idea_modules/
+/SampleServersPackage/AppPackages
+/FigmaMCP/AppPackages
+/FigmaMCP/BundleArtifacts
+/SampleServersPackage/BundleArtifacts
